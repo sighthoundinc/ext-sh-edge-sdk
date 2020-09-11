@@ -23,6 +23,8 @@ and scripts which can be used to build and run example application containers on
 
 [python-stream-check](python-stream-check): A container with NVIDIA accelerated opencv+python support.  
 
+[cuda-compile](cuda-compile): A container demonstrating compilation of cuda code
+
 
 **Note:**   
 The [camera-capture](camera-capture) application will fail to capture a 10 second video clip 
@@ -35,6 +37,7 @@ You should make sure that the media player video streaming is closed before usin
 # Release History
 
 * SDK 0.1 and baidistro release 2.0.0.  Supporting Jetpack 4.4 and L4T release 32.4.3  
+* SDK 0.1.1 and baidistro release 2.1.0.  Add cuda compile example
 
 # Release Instructions  
 * Enter `git pull origin master` command to update the repository to the latest content and features from the root directory of the repository. 
