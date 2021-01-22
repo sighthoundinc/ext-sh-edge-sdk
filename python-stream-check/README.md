@@ -5,7 +5,8 @@ python application to the base container.
 
 # Build the container
 Run [build-docker.sh](build-docker.sh) to pull the necessary base container from the repository and
-build a container with additional python components.
+build a container with additional python components.  
+Add the optional argument `--no-cache` to run the container from scratch.
 
 
 # Running the container

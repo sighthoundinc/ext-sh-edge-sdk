@@ -10,7 +10,8 @@
     Note: Make sure to copy the folder and not the contents of the folder. The current working directory should have two folder `docker` and `samples`
 
 ## Building the Docker Container
-Run [build-docker.sh](build-docker.sh) to pull the necessary base container from the repository and set up a docker container environment.
+Run [build-docker.sh](build-docker.sh) to pull the necessary base container from the repository and set up a docker container environment.  
+Add the optional argument `--no-cache` to run the container from scratch.
 
 ## Running the Docker Container
 Run [run-docker.sh](run-docker.sh) to run the container interactively.  

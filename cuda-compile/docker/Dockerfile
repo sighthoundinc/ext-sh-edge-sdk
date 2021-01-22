@@ -1,4 +1,4 @@
-ARG L4TBASE_VERSION="r32.4.3"
+ARG L4TBASE_VERSION=""
 FROM nvcr.io/nvidia/l4t-base:${L4TBASE_VERSION}
 
 RUN apt-get update && \

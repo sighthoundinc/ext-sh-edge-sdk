@@ -4,7 +4,8 @@ This sample builds a container which captures a video using an NVIDIA nvarguscam
 
 # Building the container
 
-Run [build-docker.sh](build-docker.sh) to build the container.
+Run [build-docker.sh](build-docker.sh) to build the container.  
+Add the optional argument `--no-cache` to run the container from scratch.
 
 # Running the container
 

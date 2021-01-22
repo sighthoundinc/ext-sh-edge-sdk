@@ -18,13 +18,16 @@ RUN apt-get update && apt-get install -y libopencv-python && apt-get install -y 
           zip \
           libjpeg8-dev && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install setuptools Cython wheel
-RUN pip3 install numpy --verbose
+RUN apt-get update && apt-get -y install git
+RUN apt-get -y install vim python3-smbus gpsd python3-setuptools
+RUN pip3 install gpsd-py3
+RUN cd /home && git clone https://github.com/jackw01/l3gd20-python.git && \
+        cd l3gd20-python && \
+        python3 setup.py install
+RUN cd /home && git clone https://github.com/BoulderAI/LSM303DLHC_Python.git
 
-RUN mkdir -p /usr/src/app
+COPY bai-test-accel.py /home/LSM303DLHC_Python 
+COPY bai-test-gps.py /home/
+COPY start-gpsd.sh /home/
 
-ADD rtsp-check.py /usr/src/app 
-
-WORKDIR /usr/src/app
-
-CMD [ "python3", "-u", "./rtsp-check.py" ]
+WORKDIR /home

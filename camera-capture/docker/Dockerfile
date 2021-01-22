@@ -1,4 +1,9 @@
-ARG L4TBASE_VERSION="r32.4.3"
+ARG L4TBASE_VERSION=""
+ARG BAICAMERASRC_VERSION=""
+# you can't do a "COPY from=image:{ARGUMENT}", so you have to create a layer using "FROM image:{ARGUMENT} as layer", then copy from the layer
+FROM gcr.io/external-bai/bai-baicamerasrc:${BAICAMERASRC_VERSION} as baicamerasrc
+
+ARG L4TBASE_VERSION
 FROM nvcr.io/nvidia/l4t-base:${L4TBASE_VERSION}
 
 # Needed for tzdata related installs
@@ -20,6 +25,9 @@ RUN  apt-get update && \
      libgstreamer-plugins-good1.0-dev \
      libgstreamer-plugins-bad1.0-dev
 
+COPY --from=baicamerasrc /baicamerasrc.deb /tmp/baicamerasrc.deb
+RUN dpkg -i /tmp/baicamerasrc.deb
+
 # Create a directory to hold our app
 RUN mkdir -p /usr/src/app
 
@@ -29,4 +37,4 @@ ADD camera-capture.sh /usr/src/app
 
 WORKDIR /usr/src/app
 
-CMD [ "./camera-capture.sh" ]
+ENTRYPOINT [ "./camera-capture.sh" ]
