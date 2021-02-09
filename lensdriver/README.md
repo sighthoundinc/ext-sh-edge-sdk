@@ -38,19 +38,15 @@ For example: `setzoom 50`, `setfocus 30` or `setiris 70` can be the various comm
 - `irislocation` : This command would display the current iris percentage value.
 
 - `ircuton` and `ircutoff` can be used to flip the ircut filter on or off.   
-**NOTE:** Default value  for ircut filter is on
+**NOTE:** Default value  for ircut filter is on  
+- `resetlens` : Resets lens to the default position   
+- `calibratelens` : Calibrates the lens and repositions to persistent   
+- `defaultcalibratelens` : Calibrates the lens and repositions to default position.   
 - `quit` can be used to quit the `lensDriver` application.  
   
 **NOTE:**
-The default percent values can be found in `/data/production/lens/default.json`.  
-The current percent values can be found in `/data/bai-cm/template-data/lens/config.json`.   
-The latest percent values on camera reset at any point will be stored in `/data/bai-cm/template-data/lens/config.json`.  
-
-# Resetting the Lens  
-
-`reset-lens.sh` script can be used to reset the lens to its factory position.  
-Run `./run-docker-command.sh "/data/bai-edge-sdk/lensdriver/reset-lens.sh"` for the same.  
-The user can then set lens' values as per requirement.   
+The default percent values can be found in `/data/production/defaults.json`.  
+The current percent values can be found in `/etc/bai/persist/imageserver/lens.json`.   
   
 
 # Modifying values without entering the docker container
