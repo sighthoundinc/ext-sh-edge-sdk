@@ -26,11 +26,6 @@ These samples use the lens and onboard sensor which are only available on camera
 
 [lensdriver](lensdriver): A command line utility which can manipulate the lens.
 
-[image-server](image-server): A container running an image producing server which provides images to baicamerasrc.  This container
-must be running in order to use baicamerasrc and any containers which depend on baicamerasrc.  This container must *not*
-be running when using nvarguscamerasrc.  See additional detail about baicamerasrc below.  The run scripts will automatically start
-this container as needed.
-
 ## Other Samples
 
 [python-stream-check](python-stream-check): A container with NVIDIA accelerated opencv+python support, capable
@@ -61,8 +56,8 @@ You can obtain debug information for baicamerasrc by including `-e GST_DEBUG=4` 
 ## nvarguscamerasrc
 You can switch to use the NVIDIA gstreamer nvarguscamerasrc element by changing which SOURCE_ELEMENT line in [environment.sh](environment.sh)
 is commented out. When using nvarguscamerasrc instead of baicamerasrc you may only run one gstreamer example at a time.  Use `docker ps` to see the running
-list of containers.  You must also stop the image server, which you can do with the [image-server/stop-image-server.sh](image-server/stop-image-server.sh)
-script.  In order to prevent the image server from starting on boot, you need to stop the UI, which you can do with:
+list of containers.  You must also stop the image server and UI, which you can do with `systemctl stop bai-device-ui`.
+In order to prevent the image server from starting on boot, you need to disable the UI, which you can do with:
 ```
 mkdir /etc/bai/persist/ui
 touch /etc/bai/persist/ui/not-to-be-started
