@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y libopencv-python && apt-get install -y 
           build-essential \
           zlib1g-dev \
           zip \
+          python3-setuptools \
           libjpeg8-dev && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install setuptools Cython wheel
