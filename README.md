@@ -1,5 +1,5 @@
 # Overview
-This repository contains example code demonstrating Boulder AI SDK Features on Boulder-AI
+This repository contains example code demonstrating Sighthound SDK Features on Boulder-AI
 device hardware.
 
 Login to your device using ssh and the IP address of the device or the name of the device as
@@ -8,13 +8,13 @@ specified in your delivery instructions.
 You should then find this repository in the `/data` partition of the device.  
 Follow release instructions to update this repository as new SDK releases become available.
 
-You can use the examples in this repository as a base for your own BAI custom application implementation.  
+You can use the examples in this repository as a base for your own Sighthound custom application implementation.  
 Please keep any of your working changes in the /data partition, as contents in the root filesystem  will be changed as the system is upgraded to 
 support future SDK and OS releases.
 
 # Samples
 Each sample directory contains a README file with sample specific instructions
-and scripts which can be used to build and run example application containers on BAI hardware.
+and scripts which can be used to build and run example application containers on SH hardware.
 
 ## Lens and Sensor Related Samples
 

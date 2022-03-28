@@ -1,5 +1,5 @@
-ARG L4TBASE_VERSION=""
-FROM nvcr.io/nvidia/l4t-base:${L4TBASE_VERSION}
+ARG CUDA_IMAGE=""
+FROM ${CUDA_IMAGE}
 
 RUN apt-get update && \
     apt-get install -y \

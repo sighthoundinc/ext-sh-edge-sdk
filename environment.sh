@@ -1,7 +1,7 @@
 #!/bin/bash
-L4TBASE_VERSION="r32.4.3"
+L4TBASE_VERSION="r$(bai-osinfo -l)"
 BAICAMERASRC_NAME="bai-baicamerasrc"
-BAICAMERASRC_VERSION="1.3-${L4TBASE_VERSION}"
+BAICAMERASRC_VERSION="2.0-${L4TBASE_VERSION}"
 BAICAMERASRC_CONTAINER="${BAICAMERASRC_NAME}:${BAICAMERASRC_VERSION}"
 
 if [[ $0 == ${BASH_SOURCE} ]]; then
@@ -31,4 +31,9 @@ fi
 
 if [ "${SOURCE_ELEMENT}" == "baicamerasrc" ]; then
     GSTREAMER_PRE_BUILD_CMD="cat /data/keys/external-bai-*.json | docker login -u _json_key --password-stdin https://gcr.io && docker pull gcr.io/external-bai/${BAICAMERASRC_CONTAINER}"
+fi
+
+CUDA_IMAGE="nvcr.io/nvidia/l4t-base:${L4TBASE_VERSION}"
+if [ "${L4TBASE_VERSION}" == "r32.6.1" ]; then
+    CUDA_IMAGE="nvcr.io/nvidia/l4t-cuda:10.2.460-runtime"
 fi

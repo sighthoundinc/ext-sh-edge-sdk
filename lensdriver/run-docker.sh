@@ -4,6 +4,7 @@ mkdir -p /data
 source container.sh
 
 docker run \
+    -v /data/images:/data/images \
     -v /data/production:/data/production:ro \
     -v /etc/bai-production:/etc/bai-production:ro \
     -v /etc/bai/persist:/etc/bai/persist \
@@ -13,5 +14,5 @@ docker run \
     --ipc=host \
     --cap-add SYS_PTRACE \
     -e DISPLAY=$DISPLAY \
-    -it ${container}
+    -it ${container} /bin/bash -c -i "${@}"
 

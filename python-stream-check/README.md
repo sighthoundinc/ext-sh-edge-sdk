@@ -12,5 +12,6 @@ Add the optional argument `--no-cache` to run the container from scratch.
 # Running the container
 
 Run [run-docker.sh](run-docker.sh) to run the container.  The container will print whether the python
-stream exists on localhost (whether the rtsp stream container is running)
+stream exists on localhost (whether the rtsp stream container is running).  
+Change line 3 of the script at `docker/rtsp-check.py` to check a different RTSP stream's status. 
 

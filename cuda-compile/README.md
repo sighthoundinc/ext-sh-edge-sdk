@@ -7,7 +7,7 @@
 4. The cuda samples can be obtained using the Nvidia sdk manager to install cuda toolkit or by leveraging any already existing jetson device consisting of cuda-samples.
 5. The cuda-samples should be typically at the following path: `/usr/local/cuda/samples`
 6. Copy the samples directory in `bai-edge-sdk/cuda-compile/docker` i.e the current working directory.
-    Note: Make sure to copy the folder and not the contents of the folder. The current working directory should have two folder `docker` and `samples`
+    Note: Make sure to copy the folder and not the contents of the folder. The `docker` directory should have a single subdirectory, `docker/samples/`
 
 ## Building the Docker Container
 Run [build-docker.sh](build-docker.sh) to pull the necessary base container from the repository and set up a docker container environment.  

@@ -16,7 +16,7 @@ RUN apt-get update && \
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN git clone -b 1.14.5 https://github.com/GStreamer/gst-rtsp-server.git && \
+RUN git clone -b 1.14.5-github-submodules https://github.com/sighthoundinc/gst-rtsp-server.git && \
     cd gst-rtsp-server && \
     ./autogen.sh && \
     make

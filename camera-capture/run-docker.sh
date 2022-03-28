@@ -2,7 +2,7 @@
 scriptdir="$(realpath `dirname ${BASH_SOURCE[0]}`)"
 source ${scriptdir}/../environment.sh
 
-IMAGE_SERVER_CONTAINER="bai-image-server"
+IMAGE_SERVER_CONTAINER="sh-image-server"
 
 RESULT_VIDEO=$1
 if [ -z "${RESULT_VIDEO}" ]
@@ -10,10 +10,10 @@ then
     echo "The first argument must be the video file to write!"
     exit -1
 fi
-RESULT_VIDEO=$(realpath ${RESULT_VIDEO})
-
 # touch the file first so that permissions are set by the current user, not docker
 touch ${RESULT_VIDEO}
+RESULT_VIDEO=$(realpath ${RESULT_VIDEO})
+
 
 set -e
 

@@ -2,7 +2,7 @@
 
 This sample pulls and runs a container which gives the ability to control the motor lens on sensors for all Boulder AI platforms.
 
-In order to test imx334 lensdriver functionality, make sure the path: `/data/production/lens/motor-driver/` is setup with the correct
+In order to test lensdriver functionality, make sure the file at `/data/production/defaults.json` is present and setup with the correct
 production information for the camera you are using.
 
 # Pull the container
@@ -10,14 +10,12 @@ Run [pull-docker.sh](pull-docker.sh) to pull the container from the bai registry
 
 # Running the container
 
-Run [run-docker.sh](run-docker.sh) to run the container.
-Running the `run-docker.sh` script will start the docker container in interactive mode with a new command line on top of the existing one.  
-This can be verified by using the `pwd` command on new the command line.  
-`pwd` must return `/usr/src/app` or `ls` must simply show `lensDriver` executable after running `run-docker.sh`  
+Run [run-docker.sh](run-docker.sh) to run the container.  
+Running the `run-docker.sh` script will start the `lensdriver` executable inside the docker container. The `lensdriver` executable
+is a CLI to interact with the lens motors onboard the DNN-Cam. See "Getting to know the lensDrvier" application below for an overview
+of it's functionality. 
 
-`lensDriver` executable will appear in `/usr/src/app`.  
-Run `./lensDriver` to run the executable from `/usr/src/app` directory.  
-Enter `exit` on the command line or press `ctrl-A` followed by `ctrl-D` to exit from the docker container after modifying the lens settings.  
+Enter `quit` inside the CLI or press `ctrl-A` followed by `ctrl-D` to exit from the docker container after modifying the lens settings.  
 
 # Getting to know lensDriver Application  
 `lensDriver` gives user the ability to control the lens using command line.
