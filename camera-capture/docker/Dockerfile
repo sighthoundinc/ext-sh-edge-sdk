@@ -1,7 +1,7 @@
 ARG L4TBASE_VERSION=""
 ARG BAICAMERASRC_VERSION=""
 # you can't do a "COPY from=image:{ARGUMENT}", so you have to create a layer using "FROM image:{ARGUMENT} as layer", then copy from the layer
-FROM gcr.io/external-bai/bai-baicamerasrc:${BAICAMERASRC_VERSION} as baicamerasrc
+FROM us-central1-docker.pkg.dev/ext-edge-analytics/docker/bai-baicamerasrc:${BAICAMERASRC_VERSION} as baicamerasrc
 
 ARG L4TBASE_VERSION
 FROM nvcr.io/nvidia/l4t-base:${L4TBASE_VERSION}

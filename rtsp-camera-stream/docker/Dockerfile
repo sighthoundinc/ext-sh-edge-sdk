@@ -22,7 +22,7 @@ RUN git clone -b 1.14.5-github-submodules https://github.com/sighthoundinc/gst-r
     make
 
 # you can't do a "COPY from=image:{ARGUMENT}", so you have to create a layer using "FROM image:{ARGUMENT} as layer", then copy from the layer
-FROM gcr.io/external-bai/${BAICAMERASRC_NAME}:${BAICAMERASRC_VERSION} as baicamerasrc
+FROM us-central1-docker.pkg.dev/ext-edge-analytics/docker/${BAICAMERASRC_NAME}:${BAICAMERASRC_VERSION} as baicamerasrc
 FROM build
 
 COPY --from=baicamerasrc /baicamerasrc.deb /tmp/baicamerasrc.deb

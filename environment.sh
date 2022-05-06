@@ -30,10 +30,7 @@ if [ ! -z ${node_build} ]; then
 fi
 
 if [ "${SOURCE_ELEMENT}" == "baicamerasrc" ]; then
-    GSTREAMER_PRE_BUILD_CMD="cat /data/keys/external-bai-*.json | docker login -u _json_key --password-stdin https://gcr.io && docker pull gcr.io/external-bai/${BAICAMERASRC_CONTAINER}"
+    GSTREAMER_PRE_BUILD_CMD="cat /data/keys/docker-key.json | docker login -u _json_key --password-stdin https://us-central1-docker.pkg.dev && \
+	    docker pull us-central1-docker.pkg.dev/ext-edge-analytics/docker/${BAICAMERASRC_CONTAINER}"
 fi
 
-CUDA_IMAGE="nvcr.io/nvidia/l4t-base:${L4TBASE_VERSION}"
-if [ "${L4TBASE_VERSION}" == "r32.6.1" ]; then
-    CUDA_IMAGE="nvcr.io/nvidia/l4t-cuda:10.2.460-runtime"
-fi

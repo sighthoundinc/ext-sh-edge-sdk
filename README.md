@@ -66,8 +66,11 @@ As an alternative to using Boulder AI hardware, you can begin development with a
 and use nvarguscamerasrc for container development.
 
 # Release History
+* SDK 0.3: Initial cross Jetpack release along with docker key changes. SDK 0.3 requires at least baios release 2.14.4 or 3.1.0
+(see `bai-osinfo -a` for version information).  Contact support at `support@sighthound.com` for
+assistance upgrading your device.
 * SDK 0.2 and baios release 2.4 : Initial baicamerasrc release and initial web UI version 2 release.  SDK 0.2 requires at least
-baios release 2.4 (see `cat /etc/mender/artifact_info` for version information).  Contact support at `support@boulderai.com` for
+baios release 2.4 (see `bai-osinfo -a` for version information).  Contact support at `support@sighthound.com` for
 assistance upgrading your device.
 * SDK 0.1.1 and baios release 2.1.0.  Add cuda compile example
 * SDK 0.1 and baios release 2.0.0.  Supporting Jetpack 4.4 and L4T release 32.4.3  
